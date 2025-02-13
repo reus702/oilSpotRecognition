@@ -61,13 +61,20 @@ def clusterFeatures(features_path):
 
     model = AgglomerativeClustering(n_clusters=n_clusters, metric='euclidean', linkage ='average').fit(features)
     labels_pred = model.fit_predict(features)
+    
+    '''print ("LABELS TRUE ")
+    for label in labels_true:
+        print(label)
+
+    print ("LABELS PRED ")
+    for label in labels_pred:
+        print(label)'''
 
     # Compute the metrics and print the evaluations
     print("Method: average")
     print("Rand_score", metrics.rand_score(labels_true, labels_pred))
     print("Homogeneity_score", metrics.homogeneity_score(labels_true, labels_pred))
     print("completeness_score", metrics.completeness_score(labels_true, labels_pred))
-
 
 if len(sys.argv) != 2 :
     print("Usage: python ClusterFeatures.py <features-csv-file>")

@@ -2,3 +2,4 @@ myvenv/
 dataset/
 datasetSuddiviso/
 .DS_Store
+.fake
