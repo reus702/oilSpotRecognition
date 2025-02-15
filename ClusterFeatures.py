@@ -33,7 +33,8 @@ from sklearn import metrics
 def clusterFeatures(features_path):
     # Read the list of molecules
     features_file = pd.read_csv(features_path, sep=",",skiprows=0 )
-    features = features_file[["Histogram_Distance", "SSIM"]]
+    features = features_file[["Histogram_Distance", "SSIM","White_pixels_diff","Image_difference_mean"]]
+    #features = features_file[["Histogram_Distance", "SSIM"]]
 
     # Determine the number of clusters as distinct labels in molecules
     n_clusters = 3
@@ -42,6 +43,7 @@ def clusterFeatures(features_path):
     labels_true = features_file["Label"]
 
     model = AgglomerativeClustering(n_clusters=n_clusters, metric='euclidean', linkage ='single').fit(features)
+    #model = DBSCAN(n_clusters=n_clusters, metric='euclidean', linkage ='single').fit(features)
     labels_pred = model.fit_predict(features)
 
     # Compute the metrics and print the evaluations
