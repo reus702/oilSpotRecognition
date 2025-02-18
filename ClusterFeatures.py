@@ -32,8 +32,9 @@ from sklearn import metrics
 
 def clusterFeatures(features_path):
     features_file = pd.read_csv(features_path, sep=",",skiprows=0 )
-    features = features_file[["Histogram_Distance", "SSIM","White_pixels_diff","Image_difference_mean"]]
+    #features = features_file[["Histogram_Distance", "SSIM","White_pixels_diff","Image_difference_mean"]]
     #features = features_file[["Histogram_Distance", "SSIM"]]
+    features = features_file[["White_pixels_diff","Image_difference"]]
 
     n_clusters = 3
 

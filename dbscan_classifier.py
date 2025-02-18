@@ -11,7 +11,8 @@ import matplotlib.pyplot as plt
 
 def clusterFeatures(features_path):
     features_file = pd.read_csv(features_path, sep=",", skiprows=0)
-    features = features_file[["Histogram_Distance", "SSIM", "White_pixels_diff", "Image_difference_mean"]]
+    #features = features_file[["Histogram_Distance", "SSIM", "White_pixels_diff", "Image_difference_mean"]]
+    features = features_file[["White_pixels_diff", "Image_difference"]]
     
     # Standardize features to improve clustering
     features = StandardScaler().fit_transform(features)

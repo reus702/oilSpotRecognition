@@ -1,5 +1,8 @@
 myvenv/
 dataset*/
 datasetSuddiviso*/
+results*/
 .DS_Store
 .fake
+prova*/
+photo_results*/
