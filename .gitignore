@@ -1,5 +1,5 @@
 myvenv/
-dataset/
+dataset*/
 datasetSuddiviso*/
 .DS_Store
 .fake
